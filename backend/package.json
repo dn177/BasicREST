@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Linienflug Fahrzeug Backend",
+  "main": "index.js",
+  "scripts": {
+    "createDB": "sqlite3 ./db/fahrzeuge.db < ./db/schema.sql",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel M",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "http-proxy": "^1.18.1",
+    "sqlite3": "^5.1.7"
+  }
+}

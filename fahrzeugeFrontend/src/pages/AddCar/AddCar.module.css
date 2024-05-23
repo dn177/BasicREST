@@ -1,0 +1,14 @@
+.form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form__label {
+  margin-right: 1rem;
+}
+
+.form__input {
+  border: 1px solid grey;
+}

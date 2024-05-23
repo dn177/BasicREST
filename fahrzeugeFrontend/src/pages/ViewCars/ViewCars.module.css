@@ -1,0 +1,11 @@
+.heading {
+  text-align: center;
+  font-size: 45px;
+}
+
+.carcard {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid gray;
+  margin-bottom: 1rem;
+}
