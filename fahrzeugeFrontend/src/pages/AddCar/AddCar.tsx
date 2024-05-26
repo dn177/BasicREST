@@ -2,17 +2,17 @@ import styles from "./AddCar.module.css";
 import { useState } from "react";
 
 function AddCar() {
-  const emptyFahrzeug = {
+  const emptyCar = {
     name: "",
-    kennzeichen: "",
-    farbe: "",
+    registrationnr: "",
+    color: "",
     tuv: "",
   };
-  const [fahrzeug, setFahrzeug] = useState(emptyFahrzeug);
+  const [car, setCar] = useState(emptyCar);
 
   const handleChange = (e: React.SyntheticEvent) => {
-    setFahrzeug({
-      ...fahrzeug,
+    setCar({
+      ...car,
       [e.target.name]: e.target.value,
     });
 
@@ -27,9 +27,9 @@ function AddCar() {
         "Content-Type": "application/json",
       },
       method: "POST",
-      body: JSON.stringify(fahrzeug),
+      body: JSON.stringify(car),
     });
-    setFahrzeug(emptyFahrzeug);
+    setCar(emptyCar);
   }
 
   return (
@@ -43,7 +43,7 @@ function AddCar() {
             name="name"
             id="name"
             onChange={handleChange}
-            value={fahrzeug.name}
+            value={car.name}
           />
         </div>
         <div>
@@ -54,7 +54,7 @@ function AddCar() {
             name="kennzeichen"
             id="kennzeichen"
             onChange={handleChange}
-            value={fahrzeug.kennzeichen}
+            value={car.registrationnr}
           />
         </div>
         <div>
@@ -65,18 +65,18 @@ function AddCar() {
             name="farbe"
             id="farbe"
             onChange={handleChange}
-            value={fahrzeug.farbe}
+            value={car.color}
           />
         </div>
         <div>
-          <label htmlFor="tub">TÜV:</label>
+          <label htmlFor="tuv">TÜV:</label>
           <input
             className={styles.form__input}
             type="text"
             name="tuv"
             id="tuv"
             onChange={handleChange}
-            value={fahrzeug.tuv}
+            value={car.tuv}
           />
         </div>
         <button type="submit">Fahrzeug erstellen</button>
